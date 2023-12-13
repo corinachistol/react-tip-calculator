@@ -1,39 +1,43 @@
 import { useState } from "react";
 
-export function BillInput({onInput,bill}) {
+export function BillInput({bill,onSetBill}) {
     return (
         <div>
             <label>How much was the bill?</label>
-            <input type="text" onChange={onInput}  />
+            <input 
+                type="text" 
+                placeholder="Bill value"
+                onChange={(e=>onSetBill(Number(e.target.value)))} 
+                value={bill}  />
         </div>
     );
 }
-export function SelectPercentage({ text,onChange, value}) {
+export function SelectPercentage({ children,tip,onSelect}) {
 
     // const [percentage,setPercentage] = useState()
 
     return (
         <div>
-            <label>{text}</label>
-            <select onChange={onChange} value={value} >
-                <option value="dissatisfied">Dissatisfied (0%)</option>
-                <option value="okay">It was okay (5%)</option>
-                <option value="good">It was good (10%)</option>
-                <option value="amazing">Absolutelly amazing (20%)</option>
+            <label>{children}</label>
+            <select onChange={(e)=>onSelect(Number(e.target.value))} value={tip} >
+                <option value="0">Dissatisfied (0%)</option>
+                <option value="5">It was okay (5%)</option>
+                <option value="10">It was good (10%)</option>
+                <option value="20">Absolutelly amazing (20%)</option>
             </select>
         </div>
     );
 }
 
-export function Output({totalAmount,bill,averageTip}) {
+export function Output({bill,tips}) {
     
     return (
-        <p>You pay {totalAmount} ({bill} + {averageTip})</p>
+        <h3>You pay ${bill + tips} (${bill} + ${tips} tip)</h3>
     )
 }
 
-export function Button() {
+export function Button({onClick}) {
     return(
-        <button>Reset</button>
+        <button onClick={onClick}>Reset</button>
     )
 }
