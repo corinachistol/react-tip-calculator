@@ -1,3 +1,7 @@
+![image](https://github.com/corinachistol/react-tip-calculator/assets/115491975/cac10d41-8d7d-40ca-8f51-1b8ed52f08bd)
+
+![image](https://github.com/corinachistol/react-tip-calculator/assets/115491975/7145a915-863c-4a9a-b202-ae5734bb3ecd)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
